@@ -1,0 +1,68 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="numberTextField">Assignment Number</label>
+                    <input type="text" class="form-control"
+                    id="numberTextField"
+                    placeholder="Enter the Assignment Number"
+                    name="Assignment Number" 
+                    value="<%= Tracker.Number %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorTextField">Class</label>
+                    <input type="text" class="form-control"
+                    id="classTextField"
+                    placeholder="Enter the Class"
+                    name="Class" 
+                    value="<%= Tracker.Class %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishedTextField">Due Date</label>
+                    <input type="text" class="form-control"
+                    id="dateTextField"
+                    placeholder="Enter the due date"
+                    name="Due Date" 
+                    value="<%= Tracker.Due %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTextArea">Assignment Description</label>
+                    <textarea type="text" class="form-control"
+                    id="descriptionTextArea"
+                    placeholder="Enter the a brief description of the assignment"
+                    name="Assignment Description" 
+                    required>
+                    <%= Tracker.Description %>
+                    </textarea>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/trackerslist" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
